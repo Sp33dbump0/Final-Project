@@ -1,7 +1,7 @@
 # Title
 
 ## Repository
-<Link to your project's public GitHub respository>
+[<Link to your project's public GitHub respository>](https://github.com/Sp33dbump0/Final-Project.git)
 
 ## Description
 1-2 sentence description of what it will do and how it relevant to media and digital arts.
