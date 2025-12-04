@@ -47,7 +47,6 @@ COLOR_MAP = {
     (46, 139, 87): (block.WOOL.id, 5),             # Green wool as substitute for Emerald
     (210, 105, 30): (block.BRICK_BLOCK.id, 0),     # Brick
     (173, 216, 230): (block.ICE.id, 0),           # Ice
-    (189, 183, 107): (block.HAY_BLOCK.id, 0),      # Hay
     (160, 82, 45): (block.WOOD.id, 0),            # Oak logs as wood
 }
 
