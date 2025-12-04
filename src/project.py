@@ -66,18 +66,23 @@ def closest_block(rgb):
             best_block = block_id
     return best_block
 
-def build_image_in_minecraft(image_path, width_in_blocks):
+def build_image_in_minecraft(image_path, width_in_blocks, start_y):
+    # Open the image and convert to RGB
     img = Image.open(image_path).convert("RGB")
     orig_width, orig_height = img.size
+
+    # Keep aspect ratio
     scale_factor = width_in_blocks / orig_width
     new_height = int(orig_height * scale_factor)
     img = img.resize((width_in_blocks, new_height))
 
+    # Loop through each pixel and place the closest block
     for y in range(new_height):
         for x in range(width_in_blocks):
             pixel = img.getpixel((x, y))
             block_id, block_data = closest_block(pixel)
-            mc.setBlock(ORIGIN_X + x, ORIGIN_Y + (new_height - y - 1), ORIGIN_Z, block_id, block_data)
+            # Place the block at the specified height
+            mc.setBlock(ORIGIN_X + x, start_y + (new_height - y - 1), ORIGIN_Z, block_id, block_data)
 
 
 if __name__ == "__main__":
