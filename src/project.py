@@ -78,24 +78,8 @@ def build_image_in_minecraft(image_path, width_in_blocks):
         for x in range(width_in_blocks):
             pixel = img.getpixel((x, y))
             block_id, block_data = closest_block(pixel)
-            mc.setBlock(ORIGIN_X + x, ORIGIN_Y + (new_height - y - 1), ORIGIN_Z, block_data)
+            mc.setBlock(ORIGIN_X + x, ORIGIN_Y + (new_height - y - 1), ORIGIN_Z, block_id, block_data)
 
-# resize image to fit within Minecraft world constraints and build it block by block
-
-    img = Image.open(image_path).convert("RGB")
-
-    #keep aspect ratio
-    orig_width, orig_height = img.size
-    scale_factor = width_in_blocks / orig_width
-    new_height = int(orig_height * scale_factor)
-
-    img = img.resize((width_in_blocks, new_height))
-
-    for y in range(new_height):
-        for x in range(width_in_blocks):
-            pixel = img.getpixel((x, y))
-            block_id = closest_block(pixel)
-            mc.setBlock(ORIGIN_X + x, ORIGIN_Y + (new_height - y - 1), ORIGIN_Z, block_id)
 
 if __name__ == "__main__":
     image_path = input("Enter the path to the image file: ")
