@@ -1,4 +1,5 @@
 from minecraftstuff import Minecraft
+from mcpi import block
 from PIL import Image
 import math
 
