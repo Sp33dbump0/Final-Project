@@ -64,48 +64,43 @@ def closest_block(rgb):
             best_block = block_id
     return best_block
 
-def draw_frame(image_path, start_y):
-    img = Image.open(image_path).convert("RGB")
-    width, height = img.size
-    for y in range(height):
-        for x in range(width):
-            pixel = img.getpixel((x, y))
-            block_id, block_data = closest_block(pixel)
-            mc.setBlock(ORIGIN_X + x, start_y + (height - y - 1), ORIGIN_Z, block_id, block_data)
-
-def animate(folder_path, start_y=64, delay=0.2):
-    frames = sorted(os.listdir(folder_path))
-    while True:
-        for frame in frames:
-            if frame.lower().endswith(('.png', '.jpg')):
-                draw_frame(os.path.join(folder_path, frame), start_y)
-                time.sleep(delay)
-
-def build_static(image_path, width_in_blocks, start_y):
+def draw_frame(image_path, start_y, width_in_blocks):
     img = Image.open(image_path).convert("RGB")
     orig_width, orig_height = img.size
     scale_factor = width_in_blocks / orig_width
     new_height = int(orig_height * scale_factor)
     img = img.resize((width_in_blocks, new_height))
+
     for y in range(new_height):
         for x in range(width_in_blocks):
             pixel = img.getpixel((x, y))
             block_id, block_data = closest_block(pixel)
             mc.setBlock(ORIGIN_X + x, start_y + (new_height - y - 1), ORIGIN_Z, block_id, block_data)
 
+def animate(folder_path, width_in_blocks, start_y=64, delay=0.2):
+    frames = sorted(os.listdir(folder_path))
+    while True:
+        for frame in frames:
+            if frame.lower().endswith(('.png', '.jpg', '.jpeg')):
+                draw_frame(os.path.join(folder_path, frame), start_y, width_in_blocks)
+                time.sleep(delay)
+
+def build_static(image_path, width_in_blocks, start_y):
+    draw_frame(image_path, start_y, width_in_blocks)
+
 if __name__ == "__main__":
     mode = input("Do you want a static image or an animation? (s/a): ").lower()
     start_y = int(input("Enter the starting height (Y coordinate, e.g., 64): "))
-    
+    width_in_blocks = int(input("Enter the desired width in blocks: "))
+
     if mode == 's':
         image_path = input("Enter the path to the image file: ")
-        width_in_blocks = int(input("Enter the desired width in blocks: "))
         build_static(image_path, width_in_blocks, start_y)
         mc.postToChat("Your Pixel Art Is Now Complete!")
         print("Your Pixel Art Is Now Complete!")
     elif mode == 'a':
         folder_path = input("Enter the folder path containing animation frames: ")
         delay = float(input("Enter delay between frames in seconds (e.g., 0.2): "))
-        animate(folder_path, start_y, delay)
+        animate(folder_path, width_in_blocks, start_y, delay)
     else:
         print("Invalid option! Please choose 's' for static or 'a' for animation.")
