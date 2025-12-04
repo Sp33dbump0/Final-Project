@@ -34,4 +34,17 @@ COLOR_MAP = {
     (255, 215, 0): block.GOLD_BLOCK.id
 }
 
+def closest_block(rgb):
+    r, g, b = rgb
+    best_distance = math.inf
+    best_block = block.STONE.id
+    for color, block_id in COLOR_MAP.items():
+        dr = r - color[0]
+        dg = g - color[1]
+        db = b - color[2]
+        distance = dr*dr + dg*dg + db*db
+        if distance < best_distance:
+            best_distance = distance
+            best_block = block_id
+    return best_block
 # resize image to fit within Minecraft world constraints and build it block by block
