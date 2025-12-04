@@ -3,7 +3,7 @@ from PIL import Image
 import math
 
 # connecting to the Minecraft server
-
+mc = Minecraft.create(address="localhost", port=4711)
 
 # set where the image will start in the Minecraft world
 
