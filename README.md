@@ -4,7 +4,7 @@
 Demo Video: <URL>
 
 ## GitHub Repository
-GitHub Repo:[ <URL>](https://github.com/Sp33dbump0/Final-Project)
+GitHub Repo: (https://github.com/Sp33dbump0/Final-Project)
 
 ## Description
 My code takes a given image and block width given by the 
