@@ -12,26 +12,58 @@ ORIGIN_Z = 0
 
 # function to color match the image pixel to the closest Minecraft block color
 COLOR_MAP = {
-    (255, 255, 255): block.QUARTZ_BLOCK.id,
-    (0, 0, 0): block.COAL_BLOCK.id,
-    (128, 128, 128): block.STONE.id,
-    (139, 69, 19): block.DIRT.id,
-    (34, 139, 34): block.GRASS.id,
-    (255, 0, 0):block.RED_WOOL.id,
-    (0, 255, 0): block.LIME_WOOL.id,
-    (0, 0, 255): block.BLUE_WOOL.id,
-    (255, 255, 0): block.YELLOW_WOOL.id,
+    # Wool
+    (255, 255, 255): block.WHITE_WOOL.id,
     (255, 165, 0): block.ORANGE_WOOL.id,
-    (192, 192, 192): block.LIGHT_GRAY_WOOL.id,
-    (128, 128, 128): block.GRAY_WOOL.id,
-    (128, 0, 128): block.PURPLE_WOOL.id,
-    (0, 255, 255): block.CYAN_WOOL.id,
-    (255, 192, 203): block.PINK_WOOL.id,
-    (0, 255, 255): block.LIGHT_BLUE_WOOL.id,
-    (165, 42, 42): block.BROWN_WOOL.id,
-    (255, 105, 180): block.MAGENTA_WOOL.id,
+    (255, 0, 0): block.RED_WOOL.id,
+    (255, 255, 0): block.YELLOW_WOOL.id,
     (0, 128, 0): block.GREEN_WOOL.id,
-    (255, 215, 0): block.GOLD_BLOCK.id
+    (0, 255, 255): block.LIGHT_BLUE_WOOL.id,
+    (0, 0, 255): block.BLUE_WOOL.id,
+    (128, 0, 128): block.PURPLE_WOOL.id,
+    (128, 128, 128): block.GRAY_WOOL.id,
+    (192, 192, 192): block.LIGHT_GRAY_WOOL.id,
+    (255, 192, 203): block.PINK_WOOL.id,
+    (165, 42, 42): block.BROWN_WOOL.id,
+    (0, 0, 0): block.BLACK_WOOL.id,
+    # Concrete
+    (0, 255, 0): block.LIME_CONCRETE.id,
+    (0, 128, 128): block.CYAN_CONCRETE.id,
+    (128, 0, 0): block.RED_CONCRETE.id,
+    (0, 0, 128): block.BLUE_CONCRETE.id,
+    (255, 255, 224): block.YELLOW_CONCRETE.id,
+    (255, 20, 147): block.PINK_CONCRETE.id,
+    (128, 128, 128): block.GRAY_CONCRETE.id,
+    (169, 169, 169): block.LIGHT_GRAY_CONCRETE.id,
+    (0, 255, 255): block.LIGHT_BLUE_CONCRETE.id,
+    # Terracotta
+    (210, 180, 140): block.BRICK_BLOCK.id,  # substitute for tan terracotta
+    (222, 184, 135): block.TERRACOTTA.id,   # regular terracotta
+    (255, 228, 196): block.SANDSTONE.id,   # light terracotta substitute
+    # Natural / Other Blocks
+    (34, 139, 34): block.GRASS.id,
+    (139, 69, 19): block.DIRT.id,
+    (255, 248, 220): block.SAND.id,
+    (128, 128, 0): block.GOLD_BLOCK.id,
+    (192, 192, 192): block.STONE.id,
+    (105, 105, 105): block.COBBLESTONE.id,
+    (0, 100, 0): block.LEAVES.id,
+    (47, 79, 79): block.OBSIDIAN.id,
+    (160, 82, 45): block.WOOD.id,
+    (218, 165, 32): block.GLOWSTONE.id,
+    (255, 215, 0): block.GOLD_BLOCK.id,
+    (173, 216, 230): block.ICE.id,
+    (135, 206, 250): block.LIGHT_BLUE_WOOL.id,
+    (244, 164, 96): block.SANDSTONE.id,
+    (255, 99, 71): block.REDSTONE_BLOCK.id,
+    (189, 183, 107): block.HAY_BLOCK.id,
+    (255, 250, 205): block.GLOWSTONE.id,
+    (46, 139, 87): block.EMERALD_BLOCK.id,
+    (0, 191, 255): block.WATER.id,
+    (255, 105, 180): block.PINK_CONCRETE.id,
+    (210, 105, 30): block.BRICK_BLOCK.id,
+    (128, 0, 128): block.PURPLE_WOOL.id,
+    (255, 69, 0): block.ORANGE_CONCRETE.id,
 }
 
 def closest_block(rgb):
