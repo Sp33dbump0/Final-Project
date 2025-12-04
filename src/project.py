@@ -14,57 +14,44 @@ ORIGIN_Z = 0
 
 # function to color match the image pixel to the closest Minecraft block color
 COLOR_MAP = {
-    # Wool (id=35)
-    (255, 255, 255): (block.WOOL.id, 0),   # White
-    (255, 165, 0): (block.WOOL.id, 1),     # Orange
-    (255, 0, 0): (block.WOOL.id, 14),      # Red
-    (255, 255, 0): (block.WOOL.id, 4),     # Yellow
-    (0, 128, 0): (block.WOOL.id, 13),      # Green
-    (0, 255, 255): (block.WOOL.id, 3),     # Cyan / Light Blue
-    (0, 0, 255): (block.WOOL.id, 11),      # Blue
-    (128, 0, 128): (block.WOOL.id, 10),    # Purple
-    (128, 128, 128): (block.WOOL.id, 7),   # Gray
-    (192, 192, 192): (block.WOOL.id, 8),   # Light Gray
-    (255, 192, 203): (block.WOOL.id, 6),   # Pink
-    (165, 42, 42): (block.WOOL.id, 12),    # Brown
-    (0, 0, 0): (block.WOOL.id, 15),        # Black
+    # Wool
+    (255, 255, 255): (block.WOOL.id, 0),     # White
+    (255, 165, 0): (block.WOOL.id, 1),       # Orange
+    (255, 0, 255): (block.WOOL.id, 2),       # Magenta
+    (173, 216, 230): (block.WOOL.id, 3),     # Light Blue
+    (255, 255, 0): (block.WOOL.id, 4),       # Yellow
+    (0, 255, 0): (block.WOOL.id, 5),         # Lime
+    (255, 192, 203): (block.WOOL.id, 6),     # Pink
+    (128, 128, 128): (block.WOOL.id, 7),     # Gray
+    (211, 211, 211): (block.WOOL.id, 8),     # Light Gray
+    (0, 255, 255): (block.WOOL.id, 9),       # Cyan
+    (128, 0, 128): (block.WOOL.id, 10),      # Purple
+    (0, 0, 255): (block.WOOL.id, 11),        # Blue
+    (165, 42, 42): (block.WOOL.id, 12),      # Brown
+    (0, 128, 0): (block.WOOL.id, 13),        # Green
+    (255, 0, 0): (block.WOOL.id, 14),        # Red
+    (0, 0, 0): (block.WOOL.id, 15),          # Black
 
-   # Concrete
-    (0, 255, 0): (block.CONCRETE.id, 5),    # Lime
-    (0, 128, 128): (block.CONCRETE.id, 6),  # Cyan
-    (128, 0, 0): (block.CONCRETE.id, 14),   # Red
-    (0, 0, 128): (block.CONCRETE.id, 11),   # Blue
-    (255, 255, 224): (block.CONCRETE.id, 4),# Yellow
-    (255, 20, 147): (block.CONCRETE.id, 6), # Pink (adjust if needed)
-    (128, 128, 128): (block.CONCRETE.id, 7),# Gray
-    (169, 169, 169): (block.CONCRETE.id, 8),# Light Gray
-    (0, 255, 255): (block.CONCRETE.id, 3),  # Light Blue
-    (255, 69, 0): (block.CONCRETE.id, 1),   # Orange
-
-    # Terracotta (or substitutes using existing mcpi blocks)
-    (222, 184, 135): (block.TERRACOTTA.id, 0),
-    (210, 180, 140): (block.BRICK_BLOCK.id, 0),   # Tan substitute
-    (255, 228, 196): (block.SANDSTONE.id, 0),     # Light Terracotta
-
-    # Natural / Other Blocks
-    (34, 139, 34): (block.GRASS.id, 0),
+    # Natural / Stone / Ore
+    (125, 125, 125): (block.STONE.id, 0),
     (139, 69, 19): (block.DIRT.id, 0),
+    (34, 139, 34): (block.GRASS.id, 0),
+    (169, 169, 169): (block.COBBLESTONE.id, 0),
+    (210, 180, 140): (block.SANDSTONE.id, 0),
+    (105, 105, 105): (block.STONE.id, 0),   # Stone alternative
     (255, 248, 220): (block.SAND.id, 0),
-    (128, 128, 0): (block.GOLD_BLOCK.id, 0),
-    (192, 192, 192): (block.STONE.id, 0),
-    (105, 105, 105): (block.COBBLESTONE.id, 0),
-    (0, 100, 0): (block.LEAVES.id, 0),
-    (47, 79, 79): (block.OBSIDIAN.id, 0),
-    (160, 82, 45): (block.WOOD.id, 0),
-    (218, 165, 32): (block.GLOWSTONE.id, 0),
+    (0, 0, 255): (block.WOOL.id, 11),       # Blue wool as water substitute
+    (218, 165, 32): (block.GLOWSTONE_BLOCK.id, 0),
     (255, 215, 0): (block.GOLD_BLOCK.id, 0),
-    (173, 216, 230): (block.ICE.id, 0),
-    (255, 99, 71): (block.REDSTONE_BLOCK.id, 0),
-    (189, 183, 107): (block.HAY_BLOCK.id, 0),
-    (255, 250, 205): (block.GLOWSTONE.id, 0),
+    (192, 192, 192): (block.IRON_BLOCK.id, 0),
+    (47, 79, 79): (block.OBSIDIAN.id, 0),
     (46, 139, 87): (block.EMERALD_BLOCK.id, 0),
-    (0, 191, 255): (block.WATER.id, 0),
+    (210, 105, 30): (block.BRICK_BLOCK.id, 0),
+    (173, 216, 230): (block.ICE.id, 0),
+    (189, 183, 107): (block.HAY_BLOCK.id, 0),
+    (160, 82, 45): (block.WOOD.id, 0),       # Oak logs as wood
 }
+
 
 def closest_block(rgb):
     r, g, b = rgb
