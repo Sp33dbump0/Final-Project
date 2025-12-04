@@ -66,3 +66,9 @@ def build_image_in_minecraft(image_path, width_in_blocks):
             pixel = img.getpixel((x, y))
             block_id = closest_block(pixel)
             mc.setBlock(ORIGIN_X + x, ORIGIN_Y + (new_height - y - 1), ORIGIN_Z, block_id)
+
+if __name__ == "__main__":
+    image_path = input("Enter the path to the image file: ")
+    width_in_blocks = int(input("Enter the desired width in blocks: "))
+    build_image_in_minecraft(image_path, width_in_blocks)
+    mc.postToChat("Your Pixel Atr Is Now Complete!")
