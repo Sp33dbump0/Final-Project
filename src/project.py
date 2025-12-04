@@ -1,7 +1,8 @@
-from minecraftstuff import Minecraft
+from mcpi.minecraft import Minecraft
 from mcpi import block
 from PIL import Image
 import math
+from minecraftstuff import MinecraftShape
 
 # connecting to the Minecraft server
 mc = Minecraft.create(address="localhost", port=4711)
