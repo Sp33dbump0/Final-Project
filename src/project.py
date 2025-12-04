@@ -14,7 +14,7 @@ ORIGIN_Z = 0
 
 # function to color match the image pixel to the closest Minecraft block color
 COLOR_MAP = {
-    # Wool
+    # Wool (all 16 colors)
     (255, 255, 255): (block.WOOL.id, 0),     # White
     (255, 165, 0): (block.WOOL.id, 1),       # Orange
     (255, 0, 255): (block.WOOL.id, 2),       # Magenta
@@ -33,24 +33,24 @@ COLOR_MAP = {
     (0, 0, 0): (block.WOOL.id, 15),          # Black
 
     # Natural / Stone / Ore
-    (125, 125, 125): (block.STONE.id, 0),
-    (139, 69, 19): (block.DIRT.id, 0),
-    (34, 139, 34): (block.GRASS.id, 0),
-    (169, 169, 169): (block.COBBLESTONE.id, 0),
-    (210, 180, 140): (block.SANDSTONE.id, 0),
-    (105, 105, 105): (block.STONE.id, 0),   # Stone alternative
-    (255, 248, 220): (block.SAND.id, 0),
-    (0, 0, 255): (block.WOOL.id, 11),       # Blue wool as water substitute
-    (218, 165, 32): (block.GLOWSTONE_BLOCK.id, 0),
-    (255, 215, 0): (block.GOLD_BLOCK.id, 0),
-    (192, 192, 192): (block.IRON_BLOCK.id, 0),
-    (47, 79, 79): (block.OBSIDIAN.id, 0),
-    (46, 139, 87): (block.EMERALD_BLOCK.id, 0),
-    (210, 105, 30): (block.BRICK_BLOCK.id, 0),
-    (173, 216, 230): (block.ICE.id, 0),
-    (189, 183, 107): (block.HAY_BLOCK.id, 0),
-    (160, 82, 45): (block.WOOD.id, 0),       # Oak logs as wood
+    (125, 125, 125): (block.STONE.id, 0),        # Stone
+    (139, 69, 19): (block.DIRT.id, 0),          # Dirt
+    (34, 139, 34): (block.GRASS.id, 0),         # Grass
+    (169, 169, 169): (block.COBBLESTONE.id, 0), # Cobblestone
+    (210, 180, 140): (block.SANDSTONE.id, 0),   # Sandstone
+    (255, 248, 220): (block.SAND.id, 0),        # Sand
+    (0, 0, 255): (block.WOOL.id, 11),           # Blue wool as water
+    (218, 165, 32): (block.GLOWSTONE_BLOCK.id, 0), # Glowstone
+    (255, 215, 0): (block.GOLD_BLOCK.id, 0),        # Gold block
+    (192, 192, 192): (block.IRON_BLOCK.id, 0),      # Iron block
+    (47, 79, 79): (block.OBSIDIAN.id, 0),           # Obsidian
+    (46, 139, 87): (block.WOOL.id, 5),             # Green wool as substitute for Emerald
+    (210, 105, 30): (block.BRICK_BLOCK.id, 0),     # Brick
+    (173, 216, 230): (block.ICE.id, 0),           # Ice
+    (189, 183, 107): (block.HAY_BLOCK.id, 0),      # Hay
+    (160, 82, 45): (block.WOOD.id, 0),            # Oak logs as wood
 }
+
 
 
 def closest_block(rgb):
